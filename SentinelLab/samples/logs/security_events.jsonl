@@ -1,0 +1,15 @@
+{"timestamp":"2026-06-12T10:00:00Z","src_ip":"203.0.113.44","dst_ip":"10.20.1.10","username":"m.costa","hostname":"vpn-01","event_type":"auth","action":"vpn_login","status":"failure","country":"BR"}
+{"timestamp":"2026-06-12T10:01:00Z","src_ip":"203.0.113.44","dst_ip":"10.20.1.10","username":"m.costa","hostname":"vpn-01","event_type":"auth","action":"vpn_login","status":"failure","country":"BR"}
+{"timestamp":"2026-06-12T10:02:00Z","src_ip":"203.0.113.44","dst_ip":"10.20.1.10","username":"m.costa","hostname":"vpn-01","event_type":"auth","action":"vpn_login","status":"failure","country":"BR"}
+{"timestamp":"2026-06-12T10:03:00Z","src_ip":"203.0.113.44","dst_ip":"10.20.1.10","username":"m.costa","hostname":"vpn-01","event_type":"auth","action":"vpn_login","status":"failure","country":"BR"}
+{"timestamp":"2026-06-12T10:04:00Z","src_ip":"203.0.113.44","dst_ip":"10.20.1.10","username":"m.costa","hostname":"vpn-01","event_type":"auth","action":"vpn_login","status":"failure","country":"BR"}
+{"timestamp":"2026-06-12T10:05:30Z","src_ip":"203.0.113.44","dst_ip":"10.20.1.10","username":"m.costa","hostname":"vpn-01","event_type":"auth","action":"vpn_login","status":"success","country":"BR"}
+{"timestamp":"2026-06-12T10:13:00Z","src_ip":"10.20.5.24","dst_ip":"10.20.2.15","username":"svc-finance","hostname":"FIN-WS-04","event_type":"process","action":"start","status":"success","process":"powershell.exe","command_line":"powershell.exe -NoP -W Hidden -EncodedCommand SQBFAFgAIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAKQA="}
+{"timestamp":"2026-06-12T10:18:00Z","src_ip":"10.20.6.70","dst_ip":"10.20.2.20","username":"scanner","hostname":"IT-WS-02","event_type":"network","action":"connection_denied","status":"blocked","port":22}
+{"timestamp":"2026-06-12T10:18:20Z","src_ip":"10.20.6.70","dst_ip":"10.20.2.20","username":"scanner","hostname":"IT-WS-02","event_type":"network","action":"connection_denied","status":"blocked","port":445}
+{"timestamp":"2026-06-12T10:18:45Z","src_ip":"10.20.6.70","dst_ip":"10.20.2.20","username":"scanner","hostname":"IT-WS-02","event_type":"network","action":"connection_denied","status":"blocked","port":3389}
+{"timestamp":"2026-06-12T10:19:10Z","src_ip":"10.20.6.70","dst_ip":"10.20.2.20","username":"scanner","hostname":"IT-WS-02","event_type":"network","action":"connection_denied","status":"blocked","port":5985}
+{"timestamp":"2026-06-12T10:21:00Z","src_ip":"10.20.5.24","dst_ip":"198.51.100.19","username":"svc-finance","hostname":"FIN-WS-04","event_type":"dns","action":"query","status":"success","domain":"update-checker-cdn.example","category":"suspicious"}
+{"timestamp":"2026-06-12T10:32:00Z","src_ip":"10.20.8.17","dst_ip":"10.20.2.15","username":"a.silva","hostname":"HR-WS-09","event_type":"auth","action":"vpn_login","status":"success","country":"BR"}
+{"timestamp":"2026-06-12T10:44:00Z","src_ip":"10.20.8.17","dst_ip":"10.20.3.5","username":"a.silva","hostname":"HR-WS-09","event_type":"process","action":"start","status":"success","process":"chrome.exe","command_line":"chrome.exe https://intranet.example"}
+

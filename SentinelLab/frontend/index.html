@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SentinelLab SOC</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">SL</div>
+        <div>
+          <strong>SentinelLab</strong>
+          <span>Threat Operations</span>
+        </div>
+      </div>
+      <nav aria-label="Primary">
+        <button class="nav-item active" data-view="overview">Overview</button>
+        <button class="nav-item" data-view="alerts">Alerts</button>
+        <button class="nav-item" data-view="files">File Triage</button>
+        <button class="nav-item" data-view="rules">Rules</button>
+      </nav>
+      <div class="sidebar-footer">
+        <span class="status-dot"></span>
+        <span id="apiStatus">Connecting API</span>
+      </div>
+    </aside>
+
+    <main class="shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Security Operations Center</p>
+          <h1>Threat Detection Dashboard</h1>
+        </div>
+        <div class="actions">
+          <button id="refreshBtn" class="icon-button" title="Refresh data">Refresh</button>
+          <button id="reportBtn" class="primary-button">Generate Report</button>
+        </div>
+      </header>
+
+      <section id="overview" class="view active">
+        <div class="metrics-grid" id="metricsGrid"></div>
+        <div class="workspace-grid">
+          <section class="panel">
+            <div class="panel-heading">
+              <h2>Priority Alerts</h2>
+              <span id="alertCount">0 open</span>
+            </div>
+            <div id="alertList" class="alert-list"></div>
+          </section>
+          <section class="panel">
+            <div class="panel-heading">
+              <h2>Event Timeline</h2>
+              <span>Last 24h</span>
+            </div>
+            <div id="timeline" class="timeline"></div>
+          </section>
+        </div>
+      </section>
+
+      <section id="alerts" class="view">
+        <section class="panel investigation">
+          <div class="panel-heading">
+            <h2>Investigation Queue</h2>
+            <select id="severityFilter" aria-label="Filter by severity">
+              <option value="all">All severities</option>
+              <option value="critical">Critical</option>
+              <option value="high">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+            </select>
+          </div>
+          <div id="investigationTable" class="table"></div>
+        </section>
+      </section>
+
+      <section id="files" class="view">
+        <section class="panel file-triage">
+          <div>
+            <h2>Static File Triage</h2>
+            <p>Upload a file to calculate SHA256, entropy, strings and suspicious indicators.</p>
+          </div>
+          <label class="dropzone">
+            <input id="fileInput" type="file" />
+            <span>Choose file for analysis</span>
+          </label>
+          <div id="fileResult" class="file-result"></div>
+        </section>
+      </section>
+
+      <section id="rules" class="view">
+        <section class="panel">
+          <div class="panel-heading">
+            <h2>Detection Rules</h2>
+            <span>YAML backed</span>
+          </div>
+          <div id="rulesList" class="rules-list"></div>
+        </section>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" role="status"></div>
+    <script src="./app.js"></script>
+  </body>
+</html>
+
